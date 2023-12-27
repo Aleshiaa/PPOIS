@@ -1,15 +1,12 @@
 #include "matrix.h"
 #include <fstream>
 
-// Реализация методов класса Matrix
 
 Matrix::Matrix(size_t rows, size_t cols) : rows(rows), cols(cols) {
     data.resize(rows, std::vector<double>(cols, 0.0));
 }
 
 Matrix::Matrix(const Matrix &other) : rows(other.rows), cols(other.cols), data(other.data) {}
-
-Matrix::~Matrix() {}
 
 Matrix &Matrix::operator=(const Matrix &other) {
     if (this != &other) {
@@ -64,6 +61,11 @@ void Matrix::loadFromFile(const std::string &filename) {
 }
 
 Matrix Matrix::subMatrix(size_t startRow, size_t startCol, size_t subRows, size_t subCols) const {
+    if (startRow >= rows || startCol >= cols || startRow + subRows > rows || startCol + subCols > cols) {
+        std::cerr << "Error: Invalid submatrix dimensions or starting indices." << std::endl;
+        return Matrix(0, 0);
+    }
+
     Matrix submatrix(subRows, subCols);
     for (size_t i = 0; i < subRows; ++i) {
         for (size_t j = 0; j < subCols; ++j) {
@@ -72,6 +74,7 @@ Matrix Matrix::subMatrix(size_t startRow, size_t startCol, size_t subRows, size_
     }
     return submatrix;
 }
+
 
 bool Matrix::isSquare() const {
     return rows == cols;
@@ -165,7 +168,10 @@ Matrix Matrix::transpose() const {
     return result;
 }
 
-
-
-
-
+std::vector<double>& Matrix::operator[](size_t index) {
+    if (index < rows) {
+        return data[index];
+    } else {
+        throw std::out_of_range("Index out of bounds");
+    }
+}
