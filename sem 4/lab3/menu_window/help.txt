@@ -1,0 +1,18 @@
+================= Game Guide =================
+
+The game "Checkers" is a classic board game.
+
+Game Rules:
+
+Two players compete on a 8x8 board.
+The objective is to capture all opponent's pieces or block them from making a move.
+Pieces move diagonally to empty squares.
+You can capture an opponent's piece by jumping over it.
+When a piece reaches the opposite end of the board, it becomes a king and can move in any direction.
+
+Controls:
+Use the mouse to select and move pieces.
+Click on your piece and then on the square where you want to move.
+Press ESCAPE to return to the main menu.
+
+===============================================
