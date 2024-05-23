@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e1c487;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('restaurant.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #e1c487;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #e1c487;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #444;
+    color: #eee;
+    outline: none;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #888;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #444;
+    color: #eee;
+    outline: none;
+}
+
+.options ul {
+    list-style-type: none; /* Убираем маркеры (точки) перед элементами списка */
+    padding: 0;
+}
+
+.options li {
+    margin-bottom: 10px;
+}
+
+.options li a {
+    display: block;
+    text-decoration: none;
+}
+
+.options li a button {
+    width: 200px; /* Задаем фиксированную ширину кнопок */
+    height: 40px; /* Задаем фиксированную высоту кнопок */
+    padding: 10px 20px;
+    background-color: #ea8900;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.options li a button:hover {
+    background-color: #e1c487;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ea8900;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e1c487;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #ea8900;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #e1c487;
+}
+
+.tables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.table-form {
+    margin: 10px;
+}
+
+.table-button {
+    width: 100px;
+    height: 100px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+form {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e1c487;
+}

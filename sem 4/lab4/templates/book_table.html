@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование стола</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <div class="container">
+            <h1>Свободные столы</h1>
+            <div class="tables">
+                {% for table in tables %}
+                    <form action="{{ url_for('book_table') }}" method="POST" class="table-form">
+                        <input type="hidden" name="table_number" value="{{ table.number }}">
+                        <button type="submit" class="table-button">Стол №{{ table.number }}</button>
+                    </form>
+                {% endfor %}
+            </div>
+            <form action="{{ url_for('main_page') }}" method="GET">
+                <input type="submit" value="На главную">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

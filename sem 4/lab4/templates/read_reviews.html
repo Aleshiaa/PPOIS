@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отзывы</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tables.css') }}">
+</head>
+<body>
+    <div class="background-container">
+        <div class="container">
+            <form action="{{ url_for('main_page') }}" method="GET">
+                <input type="submit" value="На главную">
+            </form>
+            <h1>Отзывы</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Оценка</th>
+                        <th>Комментарий</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for review in reviews %}
+                        <tr>
+                            <td>{{ review['author'] }}</td>
+                            <td>{{ review['rating'] }}</td>
+                            <td>{{ review['comment'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

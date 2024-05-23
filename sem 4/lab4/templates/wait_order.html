@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Ожидание заказа</title>
+    <style>
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: #e1c487;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <div class="container">
+            <div class="info">
+                <h2>Ваш заказ готовит шеф: {{ chef_name }}</h2>
+                <p>Время приготовления: {{ cook_time }} минут</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function move() {
+            var elem = document.getElementById("progressBar");
+            var width = 0;
+            var id = setInterval(frame, 600);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                    window.location.href = "/main";
+                } else {
+                    width+=10;
+                    elem.style.width = width + '%';
+                    elem.innerHTML = width + '%';
+                }
+            }
+        }
+
+        window.onload = move;
+    </script>
+</body>
+</html>

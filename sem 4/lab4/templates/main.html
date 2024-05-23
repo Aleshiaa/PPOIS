@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добро пожаловать!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="background-container">
+    <div class="container">
+        <h2>Здравствуйте, {{ username }}!</h2>
+        <p>Вас обслуживает официант: {{ available_waiter }}</p>
+        <p>Чем могу помочь?</p>
+        <div class="options">
+            <ul>
+                <li><a href="{{ url_for('view_menu') }}"><button>Посмотреть меню</button></a></li>
+                <li><a href="{{ url_for('book_table') }}"><button>Забронировать столик</button></a></li>
+                <li><a href="{{ url_for('place_order') }}"><button>Сделать заказ</button></a></li>
+                <li><a href="{{ url_for('ask_for_a_bill') }}"><button>Попросить счет</button></a></li>
+                <li><a href="{{ url_for('wait_order') }}"><button>Подождать заказ</button></a></li>
+                <li><a href="{{ url_for('leave_review') }}"><button>Оставить отзыв</button></a></li>
+                <li><a href="{{ url_for('read_reviews') }}"><button>Прочитать отзывы</button></a></li>
+                <li><a href="{{ url_for('leave') }}"><button>Уйти</button></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

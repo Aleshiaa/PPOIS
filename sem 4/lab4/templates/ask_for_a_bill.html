@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Попросить счет</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="container">
+            <form action="{{ url_for('ask_for_a_bill') }}" method="post">
+                <h1>Ваш счет составил {{ price }} рублей</h1>
+                <h2>Сколько чаевых вы хотите оставить официанту {{ waiter }}?</h2>
+                <input placeholder="Чаевые" type="number" id="numberInput" value="{{ price * 0.2 }}" min="0" name="tips" required>
+                <button type="submit">Продолжить</button>
+            </form>
+            <form action="{{ url_for('main_page') }}" method="get">
+                <button type="submit">На главную</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
